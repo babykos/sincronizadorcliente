@@ -1,0 +1,796 @@
+{
+  "_comentario": "Qué tablas participan de la sincronización. Este archivo SIEMPRE debe existir. modo 'lista' = SOLO las de 'incluir'. modo 'auto' = todas las de PK simple menos 'excluir'. 'excluir' y las internas (sync_control, id_secuencias, local) siempre se descartan. A estas tablas se les crean los triggers de rango (before_insert_) y los de captura (sync_ai_/au/ad_). La 'pk' es opcional: si falta se detecta de information_schema.",
+  "modo": "lista",
+  "excluir": [
+    "anchos",
+    "local",
+    "id_secuencias",
+    "sync_control"
+  ],
+  "incluir": [
+    {
+      "tabla": "accionesfactura",
+      "pk": "accionid"
+    },
+    {
+      "tabla": "acumularvacaciones",
+      "pk": "vacacionid"
+    },
+    {
+      "tabla": "adelantos",
+      "pk": "adelantoid"
+    },
+    {
+      "tabla": "adjuntos",
+      "pk": "adjuntoid"
+    },
+    {
+      "tabla": "adjuntosentrega",
+      "pk": "adjuntoid"
+    },
+    {
+      "tabla": "ajusteinventario",
+      "pk": "ajusteid"
+    },
+    {
+      "tabla": "ajustekit",
+      "pk": "ajustekitid"
+    },
+    {
+      "tabla": "ajustekitdetalle",
+      "pk": "ajustekitdetalleid"
+    },
+    {
+      "tabla": "anchos",
+      "pk": "anchoid"
+    },
+    {
+      "tabla": "aplicaciones",
+      "pk": "aplicacionid"
+    },
+    {
+      "tabla": "aplicacionweb",
+      "pk": "aplicacionid"
+    },
+    {
+      "tabla": "asistente_grupos",
+      "pk": "grupoid"
+    },
+    {
+      "tabla": "asistente_opciones",
+      "pk": "opcionid"
+    },
+    {
+      "tabla": "appsenvios",
+      "pk": "appenvio"
+    },
+    {
+      "tabla": "bancos",
+      "pk": "bancoid"
+    },
+    {
+      "tabla": "bodegas",
+      "pk": "bodegaid"
+    },
+    {
+      "tabla": "boletasdecompra",
+      "pk": "boletaid"
+    },
+    {
+      "tabla": "boletosagencia",
+      "pk": "boletoid"
+    },
+    {
+      "tabla": "boletosdetalle",
+      "pk": "boletodetalleid"
+    },
+    {
+      "tabla": "bonificacionplanilla",
+      "pk": "bonificacionid"
+    },
+    {
+      "tabla": "cajas",
+      "pk": "cajaid"
+    },
+    {
+      "tabla": "calculoingredientes",
+      "pk": "calculoingredienteid"
+    },
+    {
+      "tabla": "calculoproductos",
+      "pk": "calculosproductoid"
+    },
+    {
+      "tabla": "calculosinsumos",
+      "pk": "calculoid"
+    },
+    {
+      "tabla": "cargos",
+      "pk": "cargoid"
+    },
+    {
+      "tabla": "cargoshabitacion",
+      "pk": "cargoid"
+    },
+    {
+      "tabla": "categoriaboletos",
+      "pk": "categoriaid"
+    },
+    {
+      "tabla": "categoriareservaciones",
+      "pk": "categoriaid"
+    },
+    {
+      "tabla": "categoriasaplicacion",
+      "pk": "categoriaid"
+    },
+    {
+      "tabla": "categoriasclientes",
+      "pk": "categoriaid"
+    },
+    {
+      "tabla": "categoriascompra",
+      "pk": "categoriaid"
+    },
+    {
+      "tabla": "categoriascontrato",
+      "pk": "categoriaid"
+    },
+    {
+      "tabla": "categoriasprecio",
+      "pk": "categoriaid"
+    },
+    {
+      "tabla": "categoriasproductos",
+      "pk": "categoriaid"
+    },
+    {
+      "tabla": "categoriasproveedores",
+      "pk": "categoriaid"
+    },
+    {
+      "tabla": "categoriasunidad",
+      "pk": "categoriaid"
+    },
+    {
+      "tabla": "centrosdecosto",
+      "pk": "centroid"
+    },
+    {
+      "tabla": "certificados",
+      "pk": "certificadoid"
+    },
+    {
+      "tabla": "cierrecaja",
+      "pk": "cierreid"
+    },
+    {
+      "tabla": "cierreinventario",
+      "pk": "cierreid"
+    },
+    {
+      "tabla": "cierreinventariodetalle",
+      "pk": "detalleid"
+    },
+    {
+      "tabla": "cierrelote",
+      "pk": "idcierrelote"
+    },
+    {
+      "tabla": "cierremetodo",
+      "pk": "cierremetodoid"
+    },
+    {
+      "tabla": "clientehotel",
+      "pk": "clientehotelid"
+    },
+    {
+      "tabla": "clientes",
+      "pk": "clienteid"
+    },
+    {
+      "tabla": "comandos",
+      "pk": "comandoid"
+    },
+    {
+      "tabla": "comentarios",
+      "pk": "comentarioid"
+    },
+    {
+      "tabla": "comision_xvendedor_producto",
+      "pk": "idcomision"
+    },
+    {
+      "tabla": "compradetalle",
+      "pk": "detalleid"
+    },
+    {
+      "tabla": "compraencabezado",
+      "pk": "compraid"
+    },
+    {
+      "tabla": "configuracioncaja",
+      "pk": "configuracionid"
+    },
+    {
+      "tabla": "consignaciondet",
+      "pk": "consignaciondetid"
+    },
+    {
+      "tabla": "consignacionenc",
+      "pk": "consignacionid"
+    },
+    {
+      "tabla": "contratos",
+      "pk": "contratoid"
+    },
+    {
+      "tabla": "conversiones",
+      "pk": "conversionid"
+    },
+    {
+      "tabla": "correlativosdet",
+      "pk": "correlativodetid"
+    },
+    {
+      "tabla": "correlativosenc",
+      "pk": "correlativoencid"
+    },
+    {
+      "tabla": "correos",
+      "pk": "correoid"
+    },
+    {
+      "tabla": "cotizaciondet",
+      "pk": "cotizaciondetid"
+    },
+    {
+      "tabla": "cotizacionenc",
+      "pk": "cotizacionencid"
+    },
+    {
+      "tabla": "creditos",
+      "pk": "creditoid"
+    },
+    {
+      "tabla": "configuracion",
+      "pk": "configuracionid"
+    },
+    {
+      "tabla": "cuentamesa",
+      "pk": "cuentamesaid"
+    },
+    {
+      "tabla": "cuentas",
+      "pk": "cuentaid"
+    },
+    {
+      "tabla": "cuentasporpagar",
+      "pk": "cuentaid"
+    },
+    {
+      "tabla": "datacliente",
+      "pk": "dataclienteid"
+    },
+    {
+      "tabla": "deduccionplanilla",
+      "pk": "deduccionid"
+    },
+    {
+      "tabla": "deducirvacaciones",
+      "pk": "vacacionid"
+    },
+    {
+      "tabla": "definicionbilletes",
+      "pk": "definicionid"
+    },
+    {
+      "tabla": "departamentos",
+      "pk": "departamentoid"
+    },
+    {
+      "tabla": "desayunos",
+      "pk": "desayunoid"
+    },
+    {
+      "tabla": "detalleempaquepresentaciones",
+      "pk": "detalleid"
+    },
+    {
+      "tabla": "detalleentrega",
+      "pk": "detalleid"
+    },
+    {
+      "tabla": "detallenotasdecredito",
+      "pk": "detalleid"
+    },
+    {
+      "tabla": "detallenotasdecreditoproveedor",
+      "pk": "detalleid"
+    },
+    {
+      "tabla": "detallenotasdedebito",
+      "pk": "detalleid"
+    },
+    {
+      "tabla": "detallenotasdedebitoproveedor",
+      "pk": "detalleid"
+    },
+    {
+      "tabla": "detalleordenesdetrabajo",
+      "pk": "detalleid"
+    },
+    {
+      "tabla": "detalleordentrabajosimple",
+      "pk": "detalleid"
+    },
+    {
+      "tabla": "detallepedido",
+      "pk": "detallepedidoid"
+    },
+    {
+      "tabla": "detallesegmento",
+      "pk": "detalleid"
+    },
+    {
+      "tabla": "documentoscierre",
+      "pk": "documentoid"
+    },
+    {
+      "tabla": "documentoscliente",
+      "pk": "documentoid"
+    },
+    {
+      "tabla": "documentosrelacionados",
+      "pk": "documentorelacionadoid"
+    },
+    {
+      "tabla": "documentosreserva",
+      "pk": "documentoreservaid"
+    },
+    {
+      "tabla": "egresosalario",
+      "pk": "egresosalarioid"
+    },
+    {
+      "tabla": "empaquepresentaciones",
+      "pk": "empaqueid"
+    },
+    {
+      "tabla": "empleados",
+      "pk": "empleadoid"
+    },
+    {
+      "tabla": "empresas",
+      "pk": "empresaid"
+    },
+    {
+      "tabla": "estaciones",
+      "pk": "estacionid"
+    },
+    {
+      "tabla": "entregas",
+      "pk": "movimientoid"
+    },
+    {
+      "tabla": "entregasdeequipo",
+      "pk": "entregaid"
+    },
+    {
+      "tabla": "establecimientos",
+      "pk": "establecimientoid"
+    },
+    {
+      "tabla": "facturadet",
+      "pk": "facturadetid"
+    },
+    {
+      "tabla": "facturaenc",
+      "pk": "facturaencid"
+    },
+    {
+      "tabla": "facturareservacion",
+      "pk": "facturareservacionid"
+    },
+    {
+      "tabla": "grupodevariantes",
+      "pk": "grupoid"
+    },
+    {
+      "tabla": "gruposdecuentas",
+      "pk": "grupoid"
+    },
+    {
+      "tabla": "habitaciones",
+      "pk": "habitacionid"
+    },
+    {
+      "tabla": "impresoras",
+      "pk": "impresoraid"
+    },
+    {
+      "tabla": "impuestos",
+      "pk": "impuestoid"
+    },
+    {
+      "tabla": "ingresosalario",
+      "pk": "ingresosalarioid"
+    },
+    {
+      "tabla": "itemsmenu",
+      "pk": "itemid"
+    },
+    {
+      "tabla": "kardexajuste",
+      "pk": "movimientoid"
+    },
+    {
+      "tabla": "kardexcomprabodega",
+      "pk": "movimientoid"
+    },
+    {
+      "tabla": "kardexentrega",
+      "pk": "kardexentregaid"
+    },
+    {
+      "tabla": "kardexfacturadetalle",
+      "pk": "movimientoid"
+    },
+    {
+      "tabla": "kardextraslados",
+      "pk": "kardextrasladoid"
+    },
+    {
+      "tabla": "kardexx",
+      "pk": "kardexid"
+    },
+    {
+      "tabla": "kds",
+      "pk": "kdsid"
+    },
+    {
+      "tabla": "letrascontrato",
+      "pk": "letraid"
+    },
+    {
+      "tabla": "liquidacion",
+      "pk": "liquidacionid"
+    },
+    {
+      "tabla": "listas",
+      "pk": "idlistas"
+    },
+    {
+      "tabla": "lotetransacciones",
+      "pk": "loteid"
+    },
+    {
+      "tabla": "lugaresreservaciones",
+      "pk": "lugarid"
+    },
+    {
+      "tabla": "lugartrabajo",
+      "pk": "lugarid"
+    },
+    {
+      "tabla": "marcadores",
+      "pk": "marcadorid"
+    },
+    {
+      "tabla": "marcas",
+      "pk": "marcaid"
+    },
+    {
+      "tabla": "menus",
+      "pk": "menuid"
+    },
+    {
+      "tabla": "mesas",
+      "pk": "mesaid"
+    },
+    {
+      "tabla": "metadatacotizacion",
+      "pk": "metadataid"
+    },
+    {
+      "tabla": "metadatafactura",
+      "pk": "metadataid"
+    },
+    {
+      "tabla": "metadatamovimientoscaja",
+      "pk": "metaid"
+    },
+    {
+      "tabla": "metadatanotadedebito",
+      "pk": "metadataid"
+    },
+    {
+      "tabla": "monedas",
+      "pk": "monedaid"
+    },
+    {
+      "tabla": "movimientosbancos",
+      "pk": "movimientoid"
+    },
+    {
+      "tabla": "movimientoscaja",
+      "pk": "movimientoid"
+    },
+    {
+      "tabla": "notasdecredito",
+      "pk": "notadecreditoid"
+    },
+    {
+      "tabla": "notasdecreditoproveedor",
+      "pk": "notadecreditoid"
+    },
+    {
+      "tabla": "notasdedebito",
+      "pk": "notadedebitoid"
+    },
+    {
+      "tabla": "notasdedebitoproveedor",
+      "pk": "notadedebitoid"
+    },
+    {
+      "tabla": "opciones",
+      "pk": "opcionid"
+    },
+    {
+      "tabla": "operadorservicios",
+      "pk": "operadorservicioid"
+    },
+    {
+      "tabla": "ordendecompra",
+      "pk": "ordenid"
+    },
+    {
+      "tabla": "ordendecompradetalle",
+      "pk": "detalleid"
+    },
+    {
+      "tabla": "ordenesdetrabajo",
+      "pk": "ordenid"
+    },
+    {
+      "tabla": "ordentrabajosimple",
+      "pk": "ordenid"
+    },
+    {
+      "tabla": "pagocuentaporpagar",
+      "pk": "pagoid"
+    },
+    {
+      "tabla": "pagohabitacion",
+      "pk": "pagoid"
+    },
+    {
+      "tabla": "pagomasivo",
+      "pk": "pagomasivoid"
+    },
+    {
+      "tabla": "pagomasivocuentaporpagar",
+      "pk": "pagomasivoid"
+    },
+    {
+      "tabla": "pagoscredito",
+      "pk": "pagoid"
+    },
+    {
+      "tabla": "pedidosmesa",
+      "pk": "pedidomesaid"
+    },
+    {
+      "tabla": "perfiles",
+      "pk": "perfilid"
+    },
+    {
+      "tabla": "pisos",
+      "pk": "pisoid"
+    },
+    {
+      "tabla": "planeaciondevisitas",
+      "pk": "idplaneacion"
+    },
+    {
+      "tabla": "planilla",
+      "pk": "planillaid"
+    },
+    {
+      "tabla": "planilladetalle",
+      "pk": "planilladetalleid"
+    },
+    {
+      "tabla": "plantillabonificacion",
+      "pk": "bonificacionid"
+    },
+    {
+      "tabla": "plantillacompras",
+      "pk": "plantillaid"
+    },
+    {
+      "tabla": "plantilladeduccion",
+      "pk": "deduccionid"
+    },
+    {
+      "tabla": "posicionalmacen",
+      "pk": "posicionid"
+    },
+    {
+      "tabla": "preciosproductos",
+      "pk": "precioid"
+    },
+    {
+      "tabla": "presentacionreceta",
+      "pk": "presentacionid"
+    },
+    {
+      "tabla": "productokit",
+      "pk": "productokitid"
+    },
+    {
+      "tabla": "productos",
+      "pk": "productoid"
+    },
+    {
+      "tabla": "productosconsobrantes",
+      "pk": "productoconsobranteid"
+    },
+    {
+      "tabla": "proveedores",
+      "pk": "proveedorid"
+    },
+    {
+      "tabla": "proveedoresproductos",
+      "pk": "idinterno"
+    },
+    {
+      "tabla": "proyectos",
+      "pk": "proyectoid"
+    },
+    {
+      "tabla": "puntos",
+      "pk": "puntoid"
+    },
+    {
+      "tabla": "recetadet",
+      "pk": "recetadetid"
+    },
+    {
+      "tabla": "recetaenc",
+      "pk": "recetaencid"
+    },
+    {
+      "tabla": "restaurantes",
+      "pk": "restauranteid"
+    },
+    {
+      "tabla": "reservaciones",
+      "pk": "reservacionid"
+    },
+    {
+      "tabla": "reservahabitacion",
+      "pk": "reservaid"
+    },
+    {
+      "tabla": "reservamesa",
+      "pk": "reservaid"
+    },
+    {
+      "tabla": "rutas",
+      "pk": "rutaid"
+    },
+    {
+      "tabla": "rutasagencia",
+      "pk": "rutaid"
+    },
+    {
+      "tabla": "ruteovendedor",
+      "pk": "ruteovendedorid"
+    },
+    {
+      "tabla": "salarios",
+      "pk": "salarioid"
+    },
+    {
+      "tabla": "segmentosdeproductos",
+      "pk": "segmentoid"
+    },
+    {
+      "tabla": "separaciones",
+      "pk": "separacionid"
+    },
+    {
+      "tabla": "series",
+      "pk": "serieid"
+    },
+    {
+      "tabla": "solicitudempaque",
+      "pk": "solicitudempaqueid"
+    },
+    {
+      "tabla": "solicitudesdeproduccion",
+      "pk": "solicitudid"
+    },
+    {
+      "tabla": "solicitudinventarios",
+      "pk": "solicitudinventarioid"
+    },
+    {
+      "tabla": "solicitudmateriales",
+      "pk": "materialsolid"
+    },
+    {
+      "tabla": "solicitudpresentaciones",
+      "pk": "solicitudpreid"
+    },
+    {
+      "tabla": "subcuentas",
+      "pk": "hijoid"
+    },
+    {
+      "tabla": "tareas",
+      "pk": "tareaid"
+    },
+    {
+      "tabla": "tarifaportipohabitacion",
+      "pk": "tarifatipoid"
+    },
+    {
+      "tabla": "tarifashotel",
+      "pk": "tarifaid"
+    },
+    {
+      "tabla": "tipohabitacion",
+      "pk": "tipoid"
+    },
+    {
+      "tabla": "trasladodetalle",
+      "pk": "trasladodetalleid"
+    },
+    {
+      "tabla": "traslado_reserva",
+      "pk": "trasladoid"
+    },
+    {
+      "tabla": "trasladocuenta",
+      "pk": "trasladoid"
+    },
+    {
+      "tabla": "trasladoenc",
+      "pk": "trasladoid"
+    },
+    {
+      "tabla": "turnos",
+      "pk": "turnoid"
+    },
+    {
+      "tabla": "ubicaciones",
+      "pk": "idubicacion"
+    },
+    {
+      "tabla": "unidades",
+      "pk": "unidadid"
+    },
+    {
+      "tabla": "usuarios",
+      "pk": "usuarioid"
+    },
+    {
+      "tabla": "variantesproductos",
+      "pk": "varianteid"
+    },
+    {
+      "tabla": "vehiculo",
+      "pk": "vehiculoid"
+    },
+    {
+      "tabla": "zonas",
+      "pk": "zonaid"
+    },
+    {
+      "tabla": "zonasdeimpresion",
+      "pk": "zonaid"
+    }
+  ]
+}

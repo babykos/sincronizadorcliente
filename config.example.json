@@ -1,0 +1,10 @@
+{
+  "puerto": 3010,
+  "intervaloSegundos": 15,
+  "lotePush": 500,
+  "lotePull": 1000,
+  "log": {
+    "nivel": "info",
+    "archivo": "state/sincronizador.log"
+  }
+}
