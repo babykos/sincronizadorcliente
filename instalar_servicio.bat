@@ -32,17 +32,33 @@ if not exist "%NSSM_EXE%" (
     exit /b 1
 )
 
+rem Si no esta en la ruta por defecto, se busca en el PATH
 if not exist "%NODE_EXE%" (
-    echo ERROR: No se encontro node.exe en "C:\Program Files\nodejs".
+    for /f "delims=" %%i in ('where node.exe 2^>nul') do set "NODE_EXE=%%i"
+)
+
+if not exist "%NODE_EXE%" (
+    echo ERROR: No se encontro node.exe ni en "C:\Program Files\nodejs" ni en el PATH.
     echo Edite este .bat y ajuste la variable NODE_EXE con la ruta correcta.
     pause
     exit /b 1
 )
+for %%d in ("%NODE_EXE%") do set "NODE_DIR=%%~dpd"
 
 if not exist "%APP_JS%" (
     echo ERROR: No se encontro app.js en "%PROYECTO_DIR%".
     pause
     exit /b 1
+)
+
+if not exist "%PROYECTO_DIR%\node_modules\mysql2" (
+    echo Instalando dependencias de Node ^(npm ci^)...
+    call "%NODE_DIR%npm.cmd" ci --omit=dev --no-audit --no-fund
+    if errorlevel 1 (
+        echo ERROR: Fallo la instalacion de dependencias.
+        pause
+        exit /b 1
+    )
 )
 
 set "NOMBRE_SERVICIO=sincronizador_cliente"
